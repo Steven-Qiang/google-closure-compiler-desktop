@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <style>
+        #input-code,
+        #output-code {
+            width: 100%;
+            height: 250px;
+        }
+        
+        #output-wrapper {
+            width: 100%;
+            height: 75px;
+        }
+        
+        label {
+            margin-left: 5px;
+        }
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: gray;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Google Closure Compiler Desktop</h2>
+        <form role="form" onsubmit="return false">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <label for="input-code">Input Code（输入代码）</label>
+                        <textarea class="form-control" id="input-code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <label for="output-code">Output Code（输出代码）</label>
+                        <textarea class="form-control" id="output-code" placeholder='alert("Hello, New user");' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label for="compilation-level">Compilation Level（处理等级）</label>
+                        <select id="compilation-level" class="form-control">
+                          <option value="SIMPLE" selected>SIMPLE</option>
+                          <option value="BUNDLE">BUNDLE</option>
+                          <option value="WHITESPACE_ONLY">WHITESPACE_ONLY</option>
+                          <option value="ADVANCED">ADVANCED</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <label for="warning-level">Warning Level（提示等级）</label>
+                        <select id="warning-level" class="form-control">
+                          <option value="QUIET" selected>QUIET</option>
+                          <option value="DEFAULT">DEFAULT</option>
+                          <option value="VERBOSE">VERBOSE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label for="language-in">Language In（输入语言）</label>
+                        <select id="language-in" class="form-control">
+                          <option value="ECMASCRIPT3">ECMASCRIPT3</option>
+                          <option value="ECMASCRIPT5" selected>ECMASCRIPT5</option>
+                          <option value="ECMASCRIPT5_STRICT">ECMASCRIPT5_STRICT</option>
+                          <option value="ECMASCRIPT6_TYPED">ECMASCRIPT6_TYPED（实验性）</option>
+                          <option value="ECMASCRIPT_2015">ECMASCRIPT_2015</option>
+                          <option value="ECMASCRIPT_2016">ECMASCRIPT_2016</option>
+                          <option value="ECMASCRIPT_2017">ECMASCRIPT_2017</option>
+                          <option value="ECMASCRIPT_2018">ECMASCRIPT_2018</option>
+                          <option value="ECMASCRIPT_2019">ECMASCRIPT_2019</option>
+                          <option value="ECMASCRIPT_2019">STABLE</option>
+                          <option value="ECMASCRIPT_NEXT">ECMASCRIPT_NEXT</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <label for="language-out">Language Out（输出语言）</label>
+                        <select id="language-out" class="form-control">
+                        <option value="ECMASCRIPT3">ECMASCRIPT3</option>
+                        <option value="ECMASCRIPT5" selected>ECMASCRIPT5</option>
+                        <option value="ECMASCRIPT5_STRICT">ECMASCRIPT5_STRICT</option>
+                        <option value="ECMASCRIPT_2015">ECMASCRIPT_2015</option>
+                        <option value="ECMASCRIPT_2016">ECMASCRIPT_2016</option>
+                        <option value="ECMASCRIPT_2017">ECMASCRIPT_2017</option>
+                        <option value="ECMASCRIPT_2018">ECMASCRIPT_2018</option>
+                        <option value="ECMASCRIPT_2019">ECMASCRIPT_2019</option>
+                        <option value="ECMASCRIPT_2019">STABLE</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="output-wrapper">Output Wrapper（输出包裹）</label>
+                <textarea class="form-control" id="output-wrapper" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit-compiler" class="btn btn-default">Start Compiler（开始编译）</button>
+            </div>
+        </form>
+        <footer class="footer">
+            <p>2020 &copy; 强某人&#60;&#50;&#57;&#54;&#50;&#48;&#53;&#49;&#48;&#48;&#52;&#64;&#113;&#113;&#46;&#99;&#111;&#109;&#62;</p>
+        </footer>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="./renderer.js"></script>
+</body>
+
+</html>

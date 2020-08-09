@@ -1,0 +1,14 @@
+{
+  "name": "google-closure-compiler-desktop",
+  "description": "google-closure-compiler-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "9.1.2"
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.3",
+    "google-closure-compiler-js": "^20200719.0.0"
+  },
+  "author": "qiangmouren"
+}

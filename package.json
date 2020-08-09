@@ -1,0 +1,43 @@
+{
+  "name": "google-closure-compiler-desktop",
+  "version": "1.0.0",
+  "description": "Google Closure Compiler Desktop",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron app",
+    "build": "cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ ELECTRON_CUSTOM_DIR=9.1.2 electron-builder --win --x64"
+  },
+  "build": {
+    "productName": "Google Closure Compiler Desktop",
+    "appId": "gcc-desktop",
+    "copyright": "强某人<2962051004@qq.com>",
+    "compression": "maximum",
+    "electronVersion": "9.1.2",
+    "directories": {
+      "output": "build"
+    },
+    "asar": true,
+    "win": {
+      "icon": "app/images/icon.ico",
+      "target": "nsis"
+    },
+    "linux": {
+      "icon": "app/images/icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "menuCategory": true,
+      "allowElevation": false
+    },
+    "electronDownload": {
+      "mirror": "http://npm.taobao.org/mirrors/electron/"
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "9.1.2",
+    "electron-builder": "^22.8.0"
+  }
+}
