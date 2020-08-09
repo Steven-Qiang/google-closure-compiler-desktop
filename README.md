@@ -12,6 +12,7 @@
 
 > _更多详细文档和帮助请访问Google官方文档 https://developers.google.com/closure/compiler_ 
 
+> [前往下载发行版（最新版本1.0.0）](https://github.com/QiangMouRen/google-closure-compiler-desktop/releases)
 
 ## 软件架构
 软件架构说明
